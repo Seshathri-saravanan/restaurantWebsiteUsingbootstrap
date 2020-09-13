@@ -1,0 +1,24 @@
+body {
+    color:white;
+    margin:0;
+    padding:0;
+    text-align: center;
+}
+nav {
+    color:grey;
+}
+.parallax {
+    /* The image used */
+    
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(31, 20, 20, 0.7)), url("images/background.jpg");
+    /* Set a specific height */
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+h1,h2,h3{
+    font-family: 'Gill Sans';
+    color: #f8bd08;
+}
