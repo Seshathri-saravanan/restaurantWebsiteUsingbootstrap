@@ -16,9 +16,22 @@ nav {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
   }
 h1,h2,h3{
     font-family: 'Gill Sans';
     color: #f8bd08;
+}
+#child1,#child2,#child3,#child4,#child5,#child6 {
+    padding:5vw;
+    color:black;
+}
+.row{
+    margin:0;
+}
+.card{
+    width:100px,
+}
+footer{
+    color: lightslategray;
 }
