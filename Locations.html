@@ -29,11 +29,12 @@
            </button>
            <div class="collapse navbar-collapse" id="Navbar" >
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="./Restaurants.html"><span class="fa fa-home fa-lg"></span>Restaurants</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./Cuisines.html"><span class="fa fa-info fa-lg"></span>Cuisines</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>Prices</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list fa-lg"></span>Locations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span>Contact & About</a></li>
+                  <li class="nav-item"><a class="nav-link" href="./Restaurants.html"><span class="fa fa-home fa-lg"></span>Restaurants</a></li>
+                  <li class="nav-item "><a class="nav-link" href="./Cuisines.html"><span class="fa fa-info fa-lg"></span>Cuisines</a></li>
+                  <li class="nav-item"><a class="nav-link" href="./Dishes.html"><span class="fa fa-list fa-lg"></span>Dishes</a></li>
+                  <li class="nav-item"><a class="nav-link" href="./Prices.html"><span class="fa fa-list fa-lg"></span>Prices</a></li>
+                  <li class="nav-item active"><a class="nav-link" href="./Locations.html"><span class="fa fa-list fa-lg"></span>Locations</a></li>
+                  <li class="nav-item"><a class="nav-link" href="./ContactAbout.html"><span class="fa fa-address-card fa-lg"></span>Contact & About</a></li>
                 </ul>
           </div>
         </div>
@@ -55,8 +56,8 @@
     <script> 
       function initMap() { 	
       var belluci = '<h4 style="color:black;text-align:left;padding-left:3vw;">'+'Belluci’s Italian'+'</h4>'+'<div class="row align-items-center">'
-      +'<div class="col-5">'+'<img src="images/location/bellucis_logo.jpg">'+'</img>'+'</div>'
-        +'<div class="col-7"style="padding:1vw;margin:0;"  id="child1">'+'<p>'+
+      +'<div class="col-12 col-md-5">'+'<img src="images/location/bellucis_logo.jpg">'+'</img>'+'</div>'
+        +'<div class="col-12 col-md-7"style="padding:1vw;margin:0;"  id="child1">'+'<p>'+
         '"Belluci\'s demonstrates a new concept, a new food philosophy – the dawn of a new era in Canberra dining. Having been established more than 20 years ago, Belluci\'s fast became an iconic name in Canberra. To bring you the finest dishes, we’ve gone back to traditional Italian routes, creating simple, rustic food." Belluci\'s Italian Website.'
         +'</p>'+'</div>'+'</div>';
       var italian = '<h4 style="color:black;text-align:left;padding-left:3vw;">'+'Italian and Sons'+'</h4>'+'<div class="container row align-items-start">'+
@@ -86,16 +87,16 @@
         +'</p>'+'</div>'+'</div>';
         var locations = [
       [belluci, -35.225401, 149.152825],
-      [italian, -35.326401, 148.672825],
+      [italian, -35.306401, 149.01125],
       [chairman, -35.330401, 149.232825],
       [noodle, -35.540401, 149.132825],
       [jewel, -35.420401, 149.2425825],
-      [bluginger,-35.320401, 149.132825]
+      [bluginger,-35.300401, 149.132825]
     ];
 
     var map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 10,
-      center: new google.maps.LatLng(-35.320401, 149.132825),
+      zoom: 9,
+      center: new google.maps.LatLng(-35.320401, 149.167825),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
 
