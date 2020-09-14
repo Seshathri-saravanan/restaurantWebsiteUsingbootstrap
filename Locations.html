@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="site.css">
 
     <title>Canberra Restaurants</title>
-    <script src = "https://maps.googleapis.com/maps/api/js"></script>
-      
-      <script>
-         
-      </script>
+    <style> 
+        #map { 
+          height: 400px; 
+          width: 100%; 
+         } 
+      </style>
 </head>
 
 <body>
@@ -50,10 +51,149 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid" style="padding: 7vw 0 7vw 0;background-color: white;">
-        <div id = "sample" style = "width:580px; height:400px;"></div>
+    <h3>Google Map</h3> 
+    <div id="map"></div> 
+    <script> 
+      function initMap() { 	
+      var belluci = '<div class="row align-items-center">'+
+      '<div class="col-sm-3">'+'<img src="images/location/bellucis_logo.jpg">'+'</img>'+'</div>'
+        +'<div class="col-sm-9" id="child1">'+'<h4 >'+'Belluci’s Italian'+'</h4>'+'<p>'+
+        '"Belluci\'s demonstrates a new concept, a new food philosophy – the dawn of a new era in Canberra dining. Having been established more than 20 years ago, Belluci\'s fast became an iconic name in Canberra. To bring you the finest dishes, we’ve gone back to traditional Italian routes, creating simple, rustic food." Belluci\'s Italian Website.'
+        +'</p>'+'</div>'+'</div>';
+      var italian = '<div class="row align-items-center">'+
+      '<div class="col-sm-3">'+'<img src="images/location/is_logo.jpg">'+'</img>'+'</div>'
+        +'<div class="col-sm-9" id="child1">'+'<h4 >'+'Italian and Sons'+'</h4>'+'<p>'+
+        '"A casual Italian trattoria that specialises in wood fired pizzas such as Rucola with Prosciutto di Parma, rucola & reggiano. Don\'t miss daily changing main dishes of the day such as their wood roast suckling pig, rosemary, garlic, baked baby fennel & mustard fruits." Australian Good Food Guide.'
+        +'</p>'+'</div>'+'</div>';
+       var chairman = '<div class="row align-items-center">'+
+      '<div class="col-sm-3">'+'<img src="images/location/chairman_logo.jpg">'+'</img>'+'</div>'
+        +'<div class="col-sm-9" id="child1">'+'<h4 >'+'Chairman & Yip'+'</h4>'+'<p>'+
+        '"The Chairman & Yip has become one of Canberra’s longest standing and most highly regarded institutions, having received numerous awards over the years, offering an ever consistent and professional quality of service for corporate dining, conferences and presentations.'
+        +'</p>'+'</div>'+'</div>';
+        var noodle = '<div class="row align-items-center">'+
+      '<div class="col-sm-3">'+'<img src="images/location/noodle_logo.jpg">'+'</img>'+'</div>'
+        +'<div class="col-sm-9" id="child1">'+'<h4 >'+'Dickson Asian Noodle House'+'</h4>'+'<p>'+
+        '"The Dickson Asian Noodle House specialises in traditional Malaysian, Thai and Lao cuisine. The dining atmosphere is casual and cosy providing for a la carte dining, banquets and take away." Vibe FM Website.'
+        +'</p>'+'</div>'+'</div>';
+        var jewel = '<div class="row align-items-center">'+
+      '<div class="col-sm-3">'+'<img src="images/location/jewel_logo.jpg">'+'</img>'+'</div>'
+        +'<div class="col-sm-9" id="child1">'+'<h4 >'+'Jewel of India'+'</h4>'+'<p>'+
+        '"Finding a balance between dishes inspired by authentic recipes and creating a modern take on classic cuisine sees a loyal following of Canberra locals returning for a mouth-watering feast." Australian Good Food Guide Website.'
+        +'</p>'+'</div>'+'</div>';
+        var bluginger = '<div class="row align-items-center">'+
+      '<div class="col-sm-3">'+'<img src="images/location/bluginger_logo.jpg">'+'</img>'+'</div>'
+        +'<div class="col-sm-9" id="child1">'+'<h4 >'+'Blu Ginger'+'</h4>'+'<p>'+
+        '""At Blu Ginger we use only the freshest locally sourced produce, combined with authentic spices imported directly from the sub-continent, to offer classic, traditional recipes with a modern twist, creating a unique and memorable dining experience for you." Blu Ginger Website. '
+        +'</p>'+'</div>'+'</div>';
+        var locations = [
+      [belluci, -35.225401, 149.152825],
+      [italian, -35.326401, 148.672825],
+      [chairman, -35.330401, 149.232825],
+      [noodle, -35.540401, 149.132825],
+      [jewel, -35.420401, 149.2425825],
+      [bluginger,-35.320401, 149.132825]
+    ];
 
-    </div>
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(-35.320401, 149.132825),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) { 
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+        /*
+        var uluru = {lat: -35.317506, lng:149.133514}; 
+        var itl = {lat:35.274260,lng:149.132334};
+        var map = new google.maps.Map(document.getElementById('map'), { 
+          zoom: 10, 
+          center: uluru 
+        }); 
+        var infowindow1 = new google.maps.InfoWindow({
+            content: belluci
+        });
+        var marker1 = new google.maps.Marker({ 
+          position: uluru, 
+          map: map 
+        }); 
+        marker1.addListener('click', function() {
+            infowindow1.open(map, marker1);
+        });
+
+        var infowindow2 = new google.maps.InfoWindow({
+            content: italian
+        });
+        var marker2 = new google.maps.Marker({ 
+          position:itl, 
+          map: map
+        }); 
+        marker2.addListener('click', function() {
+            infowindow2.open(map, marker2);
+        });
+        /*
+        var infowindow3 = new google.maps.InfoWindow({
+            content: belluci
+        });
+        var marker1 = new google.maps.Marker({ 
+          position: uluru, 
+          map: map 
+        }); 
+        marker1.addListener('click', function() {
+            infowindow1.open(map, marker1);
+        });
+        var infowindow1 = new google.maps.InfoWindow({
+            content: belluci
+        });
+        var marker1 = new google.maps.Marker({ 
+          position: uluru, 
+          map: map 
+        }); 
+        marker1.addListener('click', function() {
+            infowindow1.open(map, marker1);
+        });
+        var infowindow1 = new google.maps.InfoWindow({
+            content: belluci
+        });
+        var marker1 = new google.maps.Marker({ 
+          position: uluru, 
+          map: map 
+        }); 
+        marker1.addListener('click', function() {
+            infowindow1.open(map, marker1);
+        });
+        var infowindow1 = new google.maps.InfoWindow({
+            content: belluci
+        });
+        var marker1 = new google.maps.Marker({ 
+          position: uluru, 
+          map: map 
+        }); 
+        marker1.addListener('click', function() {
+            infowindow1.open(map, marker1);
+        });
+*/
+      } 
+    </script> 
+    <script async defer 
+    src= 
+"https://maps.googleapis.com/maps/api/js?key= 
+AIzaSyB2bXKNDezDf6YNVc-SauobynNHPo4RJb8&callback=initMap"> 
+    </script> 
     <footer>
         <p color="red">© Copyright 2020 Canberra Restaurants</p>
     </footer>
@@ -61,22 +201,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        function loadMap() {
-			
-            var mapOptions = {
-               center:new google.maps.LatLng(19.373341, 78.662109),
-               zoom:7
-            }
-				
-            var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
-            
-            var marker = new google.maps.Marker({
-               position: new google.maps.LatLng(17.088291, 78.442383),
-               map: map,
-            });
-         }
-    </script>
+    
 </body>
 
 </html>
