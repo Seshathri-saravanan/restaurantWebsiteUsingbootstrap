@@ -28,7 +28,7 @@
                     <li class="nav-item"><a class="nav-link" href="./Dishes.html">Dishes</a></li>
                     <li class="nav-item"><a class="nav-link" href="./Prices.html">Prices</a></li>
                     <li class="nav-item"><a class="nav-link" href="./Locations.html">Locations</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="./ContactAbout.html">Contact & About</a></li>
+                    <li class="nav-item "><a class="nav-link" href="./ContactAbout.html">Contact & About</a></li>
         
                 </ul>
           </div>
@@ -124,7 +124,7 @@
             <div class="col-sm-12  col-md-3">
                 <h3>Cuisines</h3>
                 <p>The multicultural society in Canberra spoils the locals with such a vast amount of flavours from around the world.</p>
-                <p><a>click here</a>&nbsp;to find out more about the different cuisines available</p>
+                <p><a href="#">click here</a>&nbsp;to find out more about the different cuisines available</p>
             </div>
             <div class=" col-sm-12 col-md-3">
                 <h3>Dishes</h3>
@@ -132,21 +132,21 @@
                     With a grat amount of cuisines comes a great amount of dishes!
                 </p>
                 <p>There are so many amazing dishes out there for you to try</p>
-                <p><a>click here</a>&nbsp;to look for a dish</p>
+                <p><a href="#">click here</a>&nbsp;to look for a dish</p>
             </div>
             <div class="col-sm-12 col-md-3">
                 <h3>Prices</h3>
                 <p>
     Whether you're after a super cheap meal or want to treat yourself to something a little more fantasy, Canberra has it all.
                 </p>
-                <p><a>click here</a>&nbsp;to see what's available in your place</p>
+                <p><a href="#">click here</a>&nbsp;to see what's available in your place</p>
             </div>
             <div class="col-sm-12 col-md-3">
                 <h3>Locations</h3>
                 <p>
     there might be the perfect meal waiting around the corner from you. Check out our locations page to find a restaurant near you!
                 </p>
-                <p><a>click here</a>&nbsp;to see what's available near you</p>
+                <p><a href="#">click here</a>&nbsp;to see what's available near you</p>
             </div>
 
         </div>
@@ -170,88 +170,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            $("#child1,#child2,#child3,#child4,#child5,#child6").css("visibility","hidden");
-            $("#parent1").hover(function(){
-                $("#parent1").css({"filter":"brightness(60%)",});
-                $("#child1").css("visibility","visible");
-            },
-            function(){
-                $("#parent1").css({"filter":"brightness(100%)",});
-
-                $("#child1").css("visibility","hidden");
-            }); 
-            $("#parent2").hover(function(){
-                $("#parent2").css({"filter":"brightness(60%)",});
-
-               $("#child2").css("visibility","visible");
-           },
-           function(){
-            $("#parent2").css({"filter":"brightness(100%)",});
-
-               $("#child2").css("visibility","hidden");
-           }); 
-           $("#parent3").hover(function(){
-            $("#parent3").css({"filter":"brightness(60%)",});
-
-               $("#child3").css("visibility","visible");
-           },
-           function(){
-            $("#parent3").css({"filter":"brightness(100%)",});
-
-               $("#child3").css("visibility","hidden");
-           }); 
-           $("#parent4").hover(function(){
-            $("#parent4").css({"filter":"brightness(60%)",});
-
-               $("#child4").css("visibility","visible");
-           },
-           function(){
-            $("#parent4").css({"filter":"brightness(100%)",});
-
-               $("#child4").css("visibility","hidden");
-           }); 
-           $("#parent5").hover(function(){
-            $("#parent5").css({"filter":"brightness(60%)",});
-
-               $("#child5").css("visibility","visible");
-           },
-           function(){
-            $("#parent5").css({"filter":"brightness(100%)",});
-
-               $("#child5").css("visibility","hidden");
-           }); 
-           $("#parent6").hover(function(){
-            $("#parent6").css({"filter":"brightness(60%)",});
-
-               $("#child6").css("visibility","visible");
-           },
-           function(){
-            $("#parent6").css({"filter":"brightness(100%)",});
-
-               $("#child6").css("visibility","hidden");
-           }); 
-           $("#parent1").click(function(){
-                $("#downimage").attr("src","images/carousel/jamies_car.jpg");
-            });
-            $("#parent2").click(function(){
-                $("#downimage").attr("src","images/carousel/bluginger_car.jpg");
-            });
-            $("#parent3").click(function(){
-                $("#downimage").attr("src","images/carousel/chairman_car.jpeg");
-            });
-            $("#parent4").click(function(){
-                $("#downimage").attr("src","images/carousel/itandsons_car.jpg ");
-            });
-            $("#parent5").click(function(){
-                $("#downimage").attr("src","images/carousel/jewel_car.jpg");
-            });
-            $("#parent6").click(function(){
-                $("#downimage").attr("src","images/carousel/dicksonnoodle_car.jpeg");
-            });
-
-        });
+    <script src="jquery.js" type="text/javascript">
+        
     
     </script>
 </body>
